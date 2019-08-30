@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
     "target": "ES5",
     "lib": ["es7", "es6", "dom"],
     "allowJs": false,
@@ -13,9 +15,8 @@
     "noImplicitThis": true,
     "noImplicitReturns": true,
     "moduleResolution": "node",
-    "rootDir": "./src",
-    "outDir": "./dist"
+    "module": "es2015"
   },
-  "include": ["./src/**/*"],
+  "include": ["index.d.ts", "./src/**/*"],
   "exclude": ["./node_modules", "./dist"]
 }
