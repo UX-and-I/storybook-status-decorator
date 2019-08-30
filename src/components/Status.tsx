@@ -16,13 +16,16 @@ export interface StatusProps {
   status?: StatusType;
   additionalInfo?: string;
   className?: string;
+  [htmlAttributes: string]: any;
 }
 
-export const Status = styled(({ label, additionalInfo }: StatusProps) => (
-  <div>
-    <StatusContent label={label} additionalInfo={additionalInfo} />
-  </div>
-))<StatusProps>(
+export const Status = styled(
+  ({ label, additionalInfo, className, ...htmlAttributes }: StatusProps) => (
+    <div className={className} {...htmlAttributes}>
+      <StatusContent label={label} additionalInfo={additionalInfo} />
+    </div>
+  ),
+)<StatusProps>(
   ({ status = 'info' }) =>
     css`
       position: fixed;
