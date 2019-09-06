@@ -149,8 +149,12 @@ const StatusInfoBox = styled(
       </h3>
       <p>
         <em>{additionalInfo.shortInfo}</em>
+        {!!additionalInfo.fullInfo && (
+          <>
+            <br /> {additionalInfo.fullInfo}
+          </>
+        )}
       </p>
-      {!!additionalInfo.fullInfo && <p>{additionalInfo.fullInfo}</p>}
     </div>
   ),
 )<StatusInfoBoxProps>(
@@ -164,6 +168,7 @@ const StatusInfoBox = styled(
       transform: translate(-50%, -50%);
       box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.2);
       padding: 16px;
+      padding-top: 0;
       background: ${colorMap[statusType]};
 
       & h3 {
@@ -194,6 +199,11 @@ const StatusInfoBox = styled(
         background-color: white;
         color: black;
         font-size: 18px;
+
+        & em {
+          display: block;
+          font-weight: bold;
+        }
       }
 
       &.isVisible {
