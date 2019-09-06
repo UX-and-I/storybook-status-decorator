@@ -147,7 +147,10 @@ const StatusInfoBox = styled(
         {label}
         <span onClick={closeDetails}>X</span>
       </h3>
-      <p>bla</p>
+      <p>
+        <em>{additionalInfo.shortInfo}</em>
+      </p>
+      {!!additionalInfo.fullInfo && <p>{additionalInfo.fullInfo}</p>}
     </div>
   ),
 )<StatusInfoBoxProps>(
