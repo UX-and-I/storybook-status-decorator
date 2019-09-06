@@ -1,2 +1,1 @@
-// export * from "./components/Deprecation";
-export * from "./components/Status";
+export * from './components/Status';
