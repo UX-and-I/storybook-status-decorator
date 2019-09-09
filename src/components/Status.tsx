@@ -34,7 +34,10 @@ class MStatus extends React.Component<StatusProps, StatusState> {
     this.closeDetails = this.closeDetails.bind(this);
   }
 
-  toggleDetailsVisibility() {
+  toggleDetailsVisibility(shouldToggle: boolean) {
+    if (!shouldToggle) {
+      return;
+    }
     let { detailsVisible } = this.state;
     detailsVisible = !detailsVisible;
     this.setState({ detailsVisible });
@@ -58,7 +61,7 @@ class MStatus extends React.Component<StatusProps, StatusState> {
       <>
         <div
           className={className}
-          onClick={() => this.toggleDetailsVisibility()}
+          onClick={() => this.toggleDetailsVisibility(!!additionalInfo)}
           {...htmlAttributes}
         >
           <StatusContent label={label} additionalInfo={!!additionalInfo} />
@@ -122,7 +125,10 @@ const StatusContent = styled(
       }
 
       p {
+        margin: 0;
+        line-height: normal;
         font-size: 16px;
+        color: white;
       }
     `,
 );
