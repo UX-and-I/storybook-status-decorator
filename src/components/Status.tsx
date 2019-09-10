@@ -201,6 +201,7 @@ const StatusInfoBox = styled(
 
       & p {
         display: block;
+        margin: 0;
         padding: 24px;
         background-color: white;
         color: black;
